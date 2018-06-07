@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="footer/css/topPage.css" />
+    <script>
+            function hyoji() {
+                document.getElementById("main").style.visibility="visible";
+            }
+            
+            function hihyoji() {
+                document.getElementById("main").style.visibility="hidden";
+            }
+    </script>
+    <script>
+                    function login(){
+                        target =document.getElementById("login_form");
+                        if(target.style.visibility=="visible"){
+                           target.style.visibility="hidden";
+                           return;
+                        }
+                        target.style.visibility="visible";
+                    }
+    
+    </script>
+    <!--ローディング画面-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="jquery/jquery.blockUI.js"></script>
+    <!--アニメーション-->
+    <link rel="stylesheet" type="text/css" media="screen" href="animation/animationLoading.css" />
+    <script>
+        $(function(){
+            $('#foo').click(function(){
+                $.blockUI();
+                setTimeout($.unblockUI, 2000)
+                //setTimeout( window.location.href="tabView.html",3000)
+                //page();
+                //                $.ajax({
+                    //  timeout:2000,
+                    //type:"post",
+                    //                   url:"tabView.html",
+                    
+                    //           }).always(function(){
+                        //                    $.unblockUI();
+                        //              })
+                    });
+                });
+                
+        </script>
+</head>
+<body>
+    
+    <h1>Landing Page</h1>
+    <input type="button" value="OK"id="foo">
+
+    <form>
+            <p>ラジオボタン<br>
+            <input type="radio" name="searchtype" value="1" onclick="hyoji()" checked="checked">表示
+            <input type="radio" name="searchtype" value="2" onclick="hihyoji()">非表示</p>            
+    </form>
+    <div id="main">こんにちは</div><br/>
+    <form style="margin: 16px auto;width: 120px">
+            <a href="#" class="btn" onclick="login()">ログイン</a>
+       
+    </form>
+    <div class="login" id="login_form" style="visibility:hidden;" >
+        <div class="login-triangle"></div>
+        
+        <h2 class="login-header">Log in</h2>
+      
+        <form class="login-container">
+          <p><input type="email" placeholder="Email"></p>
+          <p><input type="password" placeholder="Password"></p>
+          <p><input type="submit" value="Log in"></p>
+        </form>
+      </div>
+
+
+
+</div>
+</body>
+</html>
